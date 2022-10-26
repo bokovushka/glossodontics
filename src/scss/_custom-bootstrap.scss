@@ -1,0 +1,138 @@
+//colors
+@import "colors";
+
+$body-color: $black;
+
+//navs
+$navbar-light-color: rgba($unique-dark, 0.6);
+$navbar-light-hover-color: rgba($unique-dark, 1);
+$navbar-light-active-color: rgba($unique-dark, 1);
+
+$theme-colors: (
+	"blue-accent": $blue-accent,
+);
+
+//grid
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1260px,
+) !default;
+$container-max-widths: (
+	// sm: 576px,
+	// md: 768px,
+	// lg: 992px,
+	xl: 1290px
+);
+$grid-gutter-widths: (
+	xs: 20px,
+	lg: 30px,
+) !default;
+
+$grid-gutter-width: map-get($grid-gutter-widths, lg);
+
+//btn
+$border-radius: 4px;
+$btn-padding-y: 14px;
+$btn-padding-x: 27px;
+
+//spacer
+$spacer: 10px;
+$spacers: ();
+$spacers: map-merge(
+	(
+		0: 0,
+		1: (
+			$spacer * 0.5,
+		),
+		2: $spacer,
+		3: (
+			$spacer * 1.5,
+		),
+		4: (
+			$spacer * 2,
+		),
+		5: (
+			$spacer * 2.5,
+		),
+		6: (
+			$spacer * 3,
+		),
+		7: (
+			$spacer * 3.5,
+		),
+		8: (
+			$spacer * 4,
+		),
+		9: (
+			$spacer * 4.5,
+		),
+		10: (
+			$spacer * 5,
+		),
+		11: (
+			$spacer * 5.5,
+		),
+		12: (
+			$spacer * 6,
+		),
+		13: (
+			$spacer * 6.5,
+		),
+		14: (
+			$spacer * 7,
+		),
+		15: (
+			$spacer * 7.5,
+		),
+		16: (
+			$spacer * 8,
+		),
+		17: (
+			$spacer * 8.5,
+		),
+		18: (
+			$spacer * 9,
+		),
+		19: (
+			$spacer * 9.5,
+		),
+		20: (
+			$spacer * 10,
+		),
+		21: (
+			$spacer * 10.5,
+		),
+		23: (
+			$spacer * 11.5,
+		),
+		24: (
+			$spacer * 12,
+		),
+	),
+	$spacers
+);
+
+//font-size
+$font-weight-bold: 500;
+$font-weight-bolder: 700;
+
+$headings-font-weight: 400;
+$headings-margin-bottom: 0;
+
+$line-height-base: 1.625; //22px
+
+$paragraph-margin-bottom: 15px;
+
+$card-spacer-y: 20px;
+
+$border-radius: 10px;
+$border-radius-lg: 15px;
+$border-radius-sm: 5px;
+
+//modal
+$modal-lg: 830px !default;
+
+$box-shadow: 6px 12px 20px rgba(93, 149, 173, 0.3) !default;
