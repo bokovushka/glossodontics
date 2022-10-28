@@ -1004,6 +1004,11 @@ textarea.form-control {
   fill: #01bde0;
 }
 
+#privacy-policy,
+#terms-of-use {
+  z-index: 1051;
+}
+
 #privacy-policy .modal-header,
 #terms-of-use .modal-header {
   border-bottom: none;
@@ -1233,10 +1238,16 @@ textarea.form-control {
   z-index: 1;
 }
 
-.review .swiper-slide img {
+.review .swiper-slide {
   height: 279px;
+}
+
+.review .swiper-slide img {
   -o-object-fit: cover;
      object-fit: cover;
+  position: absolute;
+  z-index: 2;
+  height: inherit;
   border-radius: 8px;
 }
 
@@ -1300,23 +1311,56 @@ textarea.form-control {
   background: #e5e5e5;
 }
 
-.review .review__article .btn-play {
-  width: 50px;
+.review .review-video {
+  position: relative;
+  height: 279px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.review .plyr {
+  height: 100%;
+}
+
+.review .plyr--video {
+  background: unset;
+}
+
+.review .plyr--video.plyr--stopped .plyr__poster,
+.review .plyr--video.plyr--stopped .plyr__video-wrapper {
+  background: unset;
+  background-size: cover;
+}
+
+.review .plyr--video.plyr--playing .btn-play__circle {
+  display: none;
+}
+
+.review .plyr__control--overlaid {
+  width: 50px !important;
   height: 50px;
   background: #1bb8de;
   border: 2px solid #1bb8de;
 }
 
-.review .review__article .btn-play .triangle-right {
+.review .plyr__control--overlaid:hover {
+  background: #1bb8de !important;
+}
+
+.review .plyr__control--overlaid svg {
   width: 20px;
   height: 20px;
+  margin: 0 auto;
   position: absolute;
-  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  margin-left: 3px;
+  top: 50%;
+  -webkit-transform: translate(-35%, -50%);
+      -ms-transform: translate(-35%, -50%);
+          transform: translate(-35%, -50%);
+}
+
+.review .plyr__poster {
+  background-size: cover;
 }
 
 .review .review__article .btn-play__circle {
@@ -1330,6 +1374,8 @@ textarea.form-control {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   border-radius: 50%;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .swiper-pagination {
@@ -2056,6 +2102,112 @@ textarea.form-control {
   font-weight: 600;
 }
 
+.plyr__control--overlaid {
+  width: 120px !important;
+  height: 120px;
+  border: 2px solid #ffffff;
+  background: transparent;
+}
+
+.plyr__control--overlaid:hover {
+  background: transparent !important;
+}
+
+.plyr__control--overlaid svg {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.plyr--video.plyr--stopped .plyr__controls {
+  display: none;
+}
+
+.plyr__poster {
+  background-size: cover;
+}
+
+#cookies.modal .modal-dialog {
+  bottom: 0;
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%;
+}
+
+#cookies.modal .modal-dialog .container {
+  max-width: 1440px;
+}
+
+#cookies.modal .modal-dialog .container .col {
+  padding: 0;
+}
+
+#cookies.modal .modal-dialog .modal-content {
+  border-radius: 0;
+  border: none;
+  background: -o-linear-gradient(357.76deg, #068cc9 43.67%, #20c3e3 99.5%);
+  background: linear-gradient(92.24deg, #068cc9 43.67%, #20c3e3 99.5%);
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body {
+  padding: 29px 63px 29px 51px;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body .btn-primary {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body p a {
+  display: inline-block;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body img {
+  width: 60px;
+  height: 100%;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body .modal-body__txt {
+  width: 100%;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body .modal-body__txt p {
+  max-width: 818px;
+  text-align: justify;
+}
+
+#cookies.modal .modal-dialog .modal-content .modal-body .btn-outline-primary,
+#cookies.modal .modal-dialog .modal-content .modal-body .btn-outline-primary:hover {
+  max-width: 205px;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  color: #14a9d7;
+}
+
+#cookies.modal.fade:not(.show) {
+  opacity: 1;
+}
+
+#cookies.modal.fade:not(.show) .modal-dialog {
+  -webkit-transform: translate3d(0, 25%, 0);
+          transform: translate3d(0, 25%, 0);
+}
+
+.modal .modal-dialog.modal-bottom {
+  bottom: 0;
+}
+
 @media (max-width: 1439px) {
   .section-top .bg-img {
     right: -100px;
@@ -2668,6 +2820,10 @@ textarea.form-control {
   }
 
   .meetings__info .btn-primary {
+    max-width: 100%;
+  }
+
+  #cookies.modal .modal-dialog .modal-content .modal-body .btn-outline-primary {
     max-width: 100%;
   }
 }

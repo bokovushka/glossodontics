@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=375, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="css/libs.min.css?_v=20221027002137">
-	<link rel="stylesheet" href="css/main.min.css?_v=20221027002137">
+	<link rel="stylesheet" href="css/libs.min.css?_v=20221028033227">
+	<link rel="stylesheet" href="css/main.min.css?_v=20221028033227">
 	<title>Home</title>
 </head>
 
@@ -108,16 +108,10 @@
 		</section>
 		<section class="section-video">
 			<div class="glossоdontic__video position-relative">
-				<img class="glossоdontic__video-poster" src="img/layer3-home.jpeg" alt="">
 				<div class="glossоdontic__video-info mt-10 mt-md-18 ">
 					<div class="glossоdontic__video-title mb-9">ABOUT GLOSSОDONTIC</div>
 				</div>
-				<div class="btn-play mx-auto d-flex align-items-center">
-					<svg class="triangle-right">
-						<use xlink:href="img/icons/icons.svg#triangle"></use>
-					</svg>
-				</div>
-				<video id="player" playsinline controls class="plyr--hide-controls">
+				<video id="player" playsinline controls class="plyr--hide-controls" data-poster="img/layer3-home.jpeg">
 					<source src="video/example.mp4" type="video/mp4" />
 				</video>
 			</div>
@@ -543,9 +537,30 @@
 		</div>
 	</div>
 </div>
-	
-	<script src="js/libs.min.js?_v=20221027002137"></script>
-	<script src="js/main.min.js?_v=20221027002137"></script>
+	<!-- popup Cookie  -->
+<button type="button" id="popup-cookies" class="btn btn-primary" data-toggle="modal" data-target="#cookies" style="display: none;">Cookies</button>
+<!-- The Modal -->
+<div class="modal fade" id="cookies" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="modal-body d-flex align-items-center flex-column flex-sm-row">
+							<img class="mb-4 mb-sm-0 mr-sm-6" src="img/cookies.png" alt="">
+							<div class="modal-body__txt d-flex align-items-center justify-content-between flex-column flex-lg-row">
+								<p>The website uses cookies consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et <a data-toggle="modal" data-target="#privacy-policy">Privacy Policy</a></p>
+								<button type="button" class="btn btn-outline-primary mr-auto mr-lg-0 ml-lg-4 mt-4 mt-lg-0" data-dismiss="modal">Accept all</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="js/libs.min.js?_v=20221028033227"></script>
+	<script src="js/main.min.js?_v=20221028033227"></script>
 </body>
 
 </html>
