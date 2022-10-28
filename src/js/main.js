@@ -286,3 +286,22 @@ $(function () {
 	// 	$("html,body").animate({ scrollTop: 0 }, 0);
 	// });
 });
+
+
+//video
+
+let PosterVideoInfo = document.querySelector('.glossоdontic__video-info'),
+	play = document.querySelector(".plyr--stopped");
+
+play.addEventListener("click", function () {
+	PosterVideoInfo.classList.add('d-none');
+});
+
+$('.review .plyr__control--overlaid').wrap('<div class="btn-play__circle"/>');
+
+//cookies modal
+$(document).ready(function () {
+	setTimeout(function () {
+		$('#popup-cookies').click();
+	}, 1000);
+});

@@ -1,7 +1,12 @@
 import 'bootstrap'
 
 import Plyr from 'plyr';
+const player = new Plyr('#player');
 const player1 = new Plyr('#player1');
+const player2 = new Plyr('#player2');
+const player3 = new Plyr('#player3');
+const player4 = new Plyr('#player4');
+const player5 = new Plyr('#player5');
 
 //swiper
 import Swiper from 'swiper/bundle';

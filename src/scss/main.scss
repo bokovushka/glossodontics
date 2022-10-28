@@ -764,6 +764,7 @@ textarea.form-control {
 }
 #privacy-policy,
 #terms-of-use {
+	z-index: 1051;
 	.modal-header {
 		border-bottom: none;
 	}
@@ -952,10 +953,15 @@ textarea.form-control {
 		padding: 0;
 		z-index: 1;
 	}
-	.swiper-slide img {
+	.swiper-slide {
 		height: 279px;
-		object-fit: cover;
-		border-radius: 8px;
+		img {
+			object-fit: cover;
+			position: absolute;
+			z-index: 2;
+			height: inherit;
+			border-radius: 8px;
+		}
 	}
 	.swiper__buttons {
 		display: flex;
@@ -996,22 +1002,52 @@ textarea.form-control {
 		cursor: auto;
 		background: #e5e5e5;
 	}
-	.review__article {
-		.btn-play {
-			width: 50px;
-			height: 50px;
-			background: #1bb8de;
-			border: 2px solid #1bb8de;
-			.triangle-right {
-				width: 20px;
-				height: 20px;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				margin-left: 3px;
+	.review-video {
+		position: relative;
+		height: 279px;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.plyr {
+		height: 100%;
+	}
+	.plyr--video {
+		background: unset;
+		&.plyr--stopped {
+			.plyr__poster,
+			.plyr__video-wrapper {
+				background: unset;
+				background-size: cover;
 			}
 		}
+		&.plyr--playing {
+			.btn-play__circle {
+				display: none;
+			}
+		}
+	}
+	.plyr__control--overlaid {
+		width: 50px !important;
+		height: 50px;
+		background: #1bb8de;
+		border: 2px solid #1bb8de;
+		&:hover {
+			background: #1bb8de !important;
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+			margin: 0 auto;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-35%, -50%);
+		}
+	}
+	.plyr__poster {
+		background-size: cover;
+	}
+	.review__article {
 		.btn-play__circle {
 			background: rgba(27, 184, 222, 0.3);
 			width: 80px;
@@ -1021,6 +1057,8 @@ textarea.form-control {
 			top: 50%;
 			transform: translate(-50%, -50%);
 			border-radius: 50%;
+			z-index: 2;
+			cursor: pointer;
 		}
 	}
 }
@@ -1593,6 +1631,96 @@ textarea.form-control {
 .emty-descr {
 	font-weight: 600;
 }
+
+//video plyr
+.plyr__control--overlaid {
+	width: 120px !important;
+	height: 120px;
+	border: 2px solid #ffffff;
+	background: transparent;
+	&:hover {
+		background: transparent !important;
+	}
+	svg {
+		width: 50px;
+		height: 50px;
+		margin: 0 auto;
+	}
+}
+.plyr--video.plyr--stopped .plyr__controls {
+	display: none;
+}
+.plyr__poster {
+	background-size: cover;
+}
+
+//cookies
+#cookies {
+	&.modal {
+		.modal-dialog {
+			bottom: 0;
+			position: absolute;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 100%;
+			.container {
+				max-width: 1440px;
+				.col {
+					padding: 0;
+				}
+			}
+			.modal-content {
+				border-radius: 0;
+				border: none;
+				background: linear-gradient(92.24deg, #068cc9 43.67%, #20c3e3 99.5%);
+				.modal-body {
+					padding: 29px 63px 29px 51px;
+					.btn-primary {
+						height: max-content;
+					}
+					p {
+						font-size: 16px;
+						line-height: 30px;
+						color: $white;
+						a {
+							display: inline-block;
+							text-decoration: underline;
+							font-weight: 600;
+						}
+					}
+					img {
+						width: 60px;
+						height: 100%;
+					}
+					.modal-body__txt {
+						width: 100%;
+						p {
+							max-width: 818px;
+							text-align: justify;
+						}
+					}
+					.btn-outline-primary,
+					.btn-outline-primary:hover {
+						max-width: 205px;
+						width: 100%;
+						background: $white;
+						border: 2px solid $white;
+						color: #14a9d7;
+					}
+				}
+			}
+		}
+		&.fade:not(.show) {
+			opacity: 1;
+			.modal-dialog {
+				transform: translate3d(0, 25%, 0);
+			}
+		}
+	}
+}
+.modal .modal-dialog.modal-bottom {
+	bottom: 0;
+}
 //..................................................................................................MOBILE
 //..................................................................................................(max-width: 1439px)
 @media (max-width: 1439px) {
@@ -2130,6 +2258,9 @@ textarea.form-control {
 		}
 	}
 	.meetings__info .btn-primary {
+		max-width: 100%;
+	}
+	#cookies.modal .modal-dialog .modal-content .modal-body .btn-outline-primary {
 		max-width: 100%;
 	}
 }

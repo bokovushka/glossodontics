@@ -51,16 +51,10 @@
 		</section>
 		<section class="section-video">
 			<div class="glossоdontic__video position-relative">
-				<img class="glossоdontic__video-poster" src="@img/layer3-home.jpeg" alt="">
 				<div class="glossоdontic__video-info mt-10 mt-md-18 ">
 					<div class="glossоdontic__video-title mb-9">ABOUT GLOSSОDONTIC</div>
 				</div>
-				<div class="btn-play mx-auto d-flex align-items-center">
-					<svg class="triangle-right">
-						<use xlink:href="@img/icons/icons.svg#triangle"></use>
-					</svg>
-				</div>
-				<video id="player" playsinline controls class="plyr--hide-controls">
+				<video id="player" playsinline controls class="plyr--hide-controls" data-poster="@img/layer3-home.jpeg">
 					<source src="video/example.mp4" type="video/mp4" />
 				</video>
 			</div>
@@ -317,8 +311,7 @@
 		</section>
 	</main>
 	@@include('html/footer.html',{})
-	<!-- @@include('html/cookies.html',{})
-	@@include('html/popup-notify-me.html',{}) -->
+	@@include('html/cookies.html',{})
 	<script src="js/libs.min.js"></script>
 	<script src="js/main.min.js"></script>
 </body>
